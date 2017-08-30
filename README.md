@@ -1,8 +1,8 @@
-# image
+# image tool
 
-> image process
+> a simple tool to process images
 
-#### Build Setup
+## Build Setup
 
 ``` bash
 # install dependencies
@@ -20,6 +20,3 @@ npm run lint
 
 ```
 
----
-
-This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue)@[a01d4d6](https://github.com/SimulatedGREG/electron-vue/tree/a01d4d68edff32c432273320f7df716234f56146) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).
