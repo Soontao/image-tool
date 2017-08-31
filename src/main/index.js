@@ -27,7 +27,8 @@ function createWindow () {
     useContentSize: true,
     width: 200,
     minimizable: false,
-    resizable: false,
+    // resizable: false,
+    icon: `${__dirname}/icon.ico`,
     autoHideMenuBar: true
   })
 
