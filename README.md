@@ -2,7 +2,7 @@
 
 > 一个处理图像的小工具, 基于Electron, Vue.js和Element UI
 
-<video src="https://res.cloudinary.com/digf90pwi/video/upload/v1504158510/img-tool_zlfmxb.mp4" controls="controls">Video Not Support</video>
+see video ? [click here](https://res.cloudinary.com/digf90pwi/video/upload/v1504158510/img-tool_zlfmxb.mp4)
 
 ## download
 
