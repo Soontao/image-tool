@@ -1,15 +1,19 @@
 var jimp = require('jimp')
 var glob = require('glob-promise')
 
-export async function lowResolutionFy (dir) {
-  var imageList = await glob(`${dir}/*[^low].+(jpg|bmp|png)`, { nobrace: true })
-  var promises = imageList.map(async image => {
+async function processImage (dir, type, processFunc, progressFunc) {
+  var imgList = await glob(`${dir}/*[^${type}].+(jpg|bmp|png)`, { nobrace: true })
+  var total = imgList.length
+  var finished = 0
+  var promises = imgList.map(async image => {
     var rt = ''
     try {
-      var lenna = await jimp.read(image)
       var fileType = image.split('.').pop()
-      lenna.resize(1024, jimp.AUTO).quality(60)
-      lenna.write(`${image}.low.${fileType}`)
+      var lenna = await jimp.read(image)
+      processFunc(lenna)
+      lenna.write(`${image}.${type}.${fileType}`)
+      finished++
+      if (progressFunc) { progressFunc(finished, total) }
       rt = 'ok'
     } catch (error) {
       rt = 'err'
@@ -20,4 +24,12 @@ export async function lowResolutionFy (dir) {
     }
   })
   return Promise.all(promises)
+}
+
+export async function lowResolutionFy (dir, onProcess) {
+  return processImage(dir, 'low', lenna => lenna.resize(1024, jimp.AUTO).quality(60), onProcess)
+}
+
+export async function blurFy (dir, onProcess) {
+  return processImage(dir, 'blur', lenna => { lenna.blur(Math.round(lenna.bitmap.width / 100)) }, onProcess)
 }
