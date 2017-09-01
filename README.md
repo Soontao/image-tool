@@ -6,7 +6,7 @@ see video ? [click here](https://res.cloudinary.com/digf90pwi/video/upload/v1504
 
 ## download
 
-download installer from [here](https://github.com/Soontao/image-tool/releases/tag/v0.0.0)
+download installer ? [click here](http://oss-theo.oss-cn-shenzhen.aliyuncs.com/download/image%20Setup%200.0.0.exe)
 
 ## usage
 
